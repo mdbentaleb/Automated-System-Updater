@@ -14,7 +14,9 @@ Effortlessly maintain your Linux system with this Bash script that streamlines r
 
 1. **Clone the Repository:**
 
+```
    git clone https://github.com/mdbentaleb/Automated-System-Updater.git
+```
 
 2. **Installation:**
 
