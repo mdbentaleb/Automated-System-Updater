@@ -37,7 +37,7 @@ Effortlessly maintain your Linux system with this Bash script that streamlines r
 
 4. **Select an Option:**
 
-   -- Follow the on-screen menu to choose the desired action.
+- Follow the on-screen menu to choose the desired action.
 
 ## Note for Users
 
