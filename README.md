@@ -20,7 +20,7 @@ Effortlessly maintain your Linux system with this Bash script that streamlines r
 
 2. **Installation:**
 
-   - cd Automated-System-Updater
+   - ```cd Automated-System-Updater```
    - chmod +x install.sh
    - ./install.sh
 
