@@ -51,5 +51,4 @@ This script is designed for personal use. Review the code before executing on cr
 
 ## Author
 
-@mdbentaleb
-https://github.com/mdbentaleb
+[mdbentaleb](https://github.com/mdbentaleb)
