@@ -12,7 +12,7 @@ Effortlessly maintain your Linux system with this Bash script that streamlines r
 
 ## How to Use
 
-** 1 **Clone the Repository:**
+1. **Clone the Repository:**
 
 ```
    git clone https://github.com/mdbentaleb/Automated-System-Updater.git
@@ -31,12 +31,13 @@ Effortlessly maintain your Linux system with this Bash script that streamlines r
 ```
 
 3. **Run the Script:**
-
-   - ./sysOpt.sh
+```
+   ./sysOpt.sh
+```
 
 4. **Select an Option:**
 
-   Follow the on-screen menu to choose the desired action.
+   -- Follow the on-screen menu to choose the desired action.
 
 ## Note for Users
 
