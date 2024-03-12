@@ -12,7 +12,7 @@ Effortlessly maintain your Linux system with this Bash script that streamlines r
 
 ## How to Use
 
-1. **Clone the Repository:**
+** 1 **Clone the Repository:**
 
 ```
    git clone https://github.com/mdbentaleb/Automated-System-Updater.git
@@ -22,7 +22,11 @@ Effortlessly maintain your Linux system with this Bash script that streamlines r
 
 ```
    cd Automated-System-Updater
+```
+```
    chmod +x install.sh
+```
+```
    ./install.sh
 ```
 
