@@ -1,5 +1,8 @@
 # sysOpt.sh - Automated System Updater
 
+![script-img](https://github.com/mdbentaleb/Automated-System-Updater/assets/132714803/b32dc79f-d0c9-46a7-92c6-30aeaf018491)
+
+
 Effortlessly maintain your Linux system with this Bash script that streamlines routine tasks using the `apt` package manager.
 
 ## Features
