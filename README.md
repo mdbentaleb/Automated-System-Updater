@@ -17,13 +17,13 @@ Effortlessly maintain your Linux system with this Bash script that streamlines r
 
 1. **Clone the Repository:**
 
-```
+```bash
    git clone https://github.com/mdbentaleb/Automated-System-Updater.git
 ```
 
 2. **Installation:**
 
-```
+```bash
    cd Automated-System-Updater
 ```
 ```
