@@ -7,4 +7,5 @@ clear
 echo -e "\n>>>>>>>> \e[32mdone..!\e[0m"
 sleep 1
 echo -e "-Command to Start System Updater:  \e[38;5;214m./sysOpt.sh\e[0m\n"
-sleep 1
+sleep 2
+./sysOpt.sh
