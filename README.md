@@ -26,15 +26,15 @@ Effortlessly maintain your Linux system with this Bash script that streamlines r
 ```bash
    cd Automated-System-Updater
 ```
-```
+```bash
    chmod +x install.sh
 ```
-```
+```bash
    ./install.sh
 ```
 
 3. **Run the Script:**
-```
+```bash
    ./sysOpt.sh
 ```
 
