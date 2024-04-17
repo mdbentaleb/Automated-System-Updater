@@ -32,7 +32,8 @@ Effortlessly maintain your Linux system with this Bash script that streamlines r
 ```bash
    ./install.sh
 ```
-📌 **Note:** Upon completing the installation requirements, the program will seamlessly initiate and run automatically. 🚀
+📌 **Note:** Upon completing the installation requirements, the program will seamlessly initiate
+               and run automatically. 🚀
 
 3. **Run the Script:**
 ```bash
