@@ -45,9 +45,13 @@ Effortlessly maintain your Linux system with this Bash script that streamlines r
 
 ## Adding "sysOpt" to the Local System Path
 
-	-
-	-
-	-
+To make the "sysOpt" script accessible from any directory in your system and to run it as a command,
+you can add it to a directory that is included in your system's PATH environment variable:
+
+- create a symbolic link.
+```bash
+	sudo ln -s ~/Automated-System-Updater/sysOpt.sh" /usr/local/bin/syso
+```
 
 ![@mdbenaleb_~_Automated-System-Updater](https://github.com/mdbentaleb/Automated-System-Updater/assets/132714803/2a7a8fca-e413-434a-bf92-16d66010f258)
 
