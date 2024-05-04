@@ -1,6 +1,6 @@
 # sysOpt.sh - Automated System Updater
 
-![script-img](https://github.com/mdbentaleb/Automated-System-Updater/assets/132714803/b32dc79f-d0c9-46a7-92c6-30aeaf018491)
+![script](https://github.com/mdbentaleb/Automated-System-Updater/assets/132714803/3d37bf4f-168b-447d-871e-a3a457e6b912)
 
 
 Effortlessly maintain your Linux system with this Bash script that streamlines routine tasks using the `apt` package manager.
@@ -42,6 +42,15 @@ Effortlessly maintain your Linux system with this Bash script that streamlines r
 4. **Select an Option:**
 
 - Follow the on-screen menu to choose the desired action.
+
+## Adding "sysOpt" to the Local System Path
+
+	-
+	-
+	-
+
+![@mdbenaleb_~_Automated-System-Updater](https://github.com/mdbentaleb/Automated-System-Updater/assets/132714803/2a7a8fca-e413-434a-bf92-16d66010f258)
+
 
 ## Note for Users
 
