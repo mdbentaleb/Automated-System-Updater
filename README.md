@@ -55,6 +55,8 @@ you can add it to a directory that is included in your system's PATH environment
 
 ![@mdbenaleb_~_Automated-System-Updater](https://github.com/mdbentaleb/Automated-System-Updater/assets/132714803/2a7a8fca-e413-434a-bf92-16d66010f258)
 
+- Now you can enjoy the convenience of using the "sysOpt" script as a command ('syso') from anywhere in your system!
+
 
 ## Note for Users
 
