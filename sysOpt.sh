@@ -1,5 +1,17 @@
 #!/bin/bash
 
+
+
+function tpwrt() {
+	local txt="$1"
+	local dly="$2"
+
+	for ((i = 0; i < ${#txt}; i++)); do
+		echo -ne "\e[32m${txt:$i:1}\e[0m"
+		sleep "$dly"
+	done
+}
+
 function menu() {
 	clear
 	title="sysOpt :"
@@ -8,7 +20,8 @@ function menu() {
 	padding=$(( (terminal_width - banner_width) / 2 ))
 	figlet -t -f standard "$title" | sed "s/^/$(printf '%*s' $padding)/"
 	copyright=$(( (terminal_width - 28) / 2 ))
-	echo -e "$(printf '%*s' $copyright)" "\e[32mProgrammed by mdbentaleb\e[0m"
+	printf '%*s' $copyright
+	tpwrt "Programmed by mdbentaleb" 0.05
 	echo -e "\n\n"
 	echo -e "\t\e[32m1\e[0m- Update System"
 	echo -e "\t\e[32m2\e[0m- Check needed Upgrades"
@@ -23,11 +36,11 @@ function menu() {
 function check_and_fix_broken_packages() {
 	echo -e "\n    \e[38;5;214mChecking for broken packages...!\e[0m"
 	if sudo apt update && sudo apt --fix-broken install -y; then
-		echo -e "\n    \e[38;5;214mDone fixing broken packages.\e[0m"
+		echo -e "    \e[38;5;214mDone fixing broken packages.\e[0m"
 	else
 		echo -e "\n    \e[38;5;196mFailed to fix broken packages.\e[0m"
 	fi
-	sleep 2
+	sleep 1
 }
 
 menu
@@ -39,31 +52,31 @@ while true; do
 		echo -e "\n    \e[38;5;214mChecking for updates...!\e[0m"
 		sleep 1
 		if sudo apt update -y; then
-			echo -e "\n    \e[38;5;214mUpdating system successfully.\e[0m"
+			echo -e "    \e[38;5;214mUpdating system successfully.\e[0m"
 		else
 			echo -e "\n    \e[38;5;196mFailed to update system.\e[0m"
 		fi
-		sleep 2
+		sleep 1
 
 	elif [[ $option -eq '2' ]]; then
 		echo -e "\n    \e[38;5;214mChecking needed upgrades...!\e[0m"
 		sleep 1
 		if sudo apt list --upgradable; then
-			echo -e "\n    \e[38;5;214mDone checking needed upgrades.\e[0m"
+			echo -e "    \e[38;5;214mDone checking needed upgrades.\e[0m"
 		else
 			echo -e "\n    \e[38;5;196mFailed to check needed upgrades.\e[0m"
 		fi
-		sleep 2
+		sleep 1
 
 	elif [[ $option == '3' ]]; then
 		echo -e "\n    \e[38;5;214mUpgrading system...!\e[0m"
 		sleep 1
 		if sudo apt upgrade -y; then
-			echo -e "\n    \e[38;5;214mSystem upgrade completed successfully.\e[0m"
+			echo -e "    \e[38;5;214mSystem upgrade completed successfully.\e[0m"
 		else
 			echo -e "\n    \e[38;5;196mFailed to upgrade system.\e[0m"
 		fi
-		sleep 2
+		sleep 1
 
 	elif [[ $option == '4' ]]; then
                 check_and_fix_broken_packages
@@ -72,21 +85,21 @@ while true; do
 		echo -e "\n    \e[38;5;214mRemoving unused packages...!\e[0m"
 		sleep 1
 		if sudo apt autoremove -y; then
-			echo -e "\n    \e[38;5;214mUnused packages removed successfully.\e[0m"
+			echo -e "    \e[38;5;214mUnused packages removed successfully.\e[0m"
 		else
 			echo -e "\n    \e[38;5;196mFailed to remove unused packages.\e[0m"
 		fi
-		sleep 2
+		sleep 1
 
 	elif [[ $option == '6' ]]; then
 		echo -e "\n    \e[38;5;214mCleaning package cache...!\e[0m"
 		sleep 1
 		if sudo apt autoclean; then
-			echo -e "\n    \e[38;5;214mPackage cache cleaned successfully.\e[0m"
+			echo -e "    \e[38;5;214mPackage cache cleaned successfully.\e[0m"
 		else
 			echo -e "\n    \e[38;5;196mFailed to clean package cache.\e[0m"
 		fi
-		sleep 2
+		sleep 1
 
 	elif [[ $option == '7' ]]; then
 		echo -e "\n    \e[38;5;214mclear...!\e[0m"
@@ -95,7 +108,7 @@ while true; do
 		menu
 
 	elif [[ $option == '0' ]]; then
-		echo -e "\n\e[31m>>>>>>>>>> Exit\e[0m"
+		echo -e "\n\e[31m>>>>>>> Exit.\e[0m"
 		sleep 1
 		clear
 		exit
