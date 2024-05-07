@@ -1,7 +1,5 @@
 #!/bin/bash
 
-
-
 function tpwrt() {
 	local txt="$1"
 	local dly="$2"
