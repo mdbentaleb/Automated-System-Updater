@@ -3,13 +3,11 @@
 function tpwrt() {
 	local txt="$1"
 	local dly="$2"
-
 	for ((i = 0; i < ${#txt}; i++)); do
 		echo -ne "\e[32m${txt:$i:1}\e[0m"
 		sleep "$dly"
 	done
 }
-
 function menu() {
 	clear
 	title="sysOpt :"
@@ -30,7 +28,6 @@ function menu() {
 	echo -e "\t\e[38;5;214m7\e[0m- \e[38;5;214mClear screen\e[0m"
 	echo -e "\t\e[31m0\e[0m- \e[31mExit\e[0m"
 }
-
 function check_and_fix_broken_packages() {
 	echo -e "\n    \e[38;5;214mChecking for broken packages...!\e[0m"
 	if sudo apt update && sudo apt --fix-broken install -y; then
@@ -40,12 +37,9 @@ function check_and_fix_broken_packages() {
 	fi
 	sleep 1
 }
-
 menu
-
 while true; do
 	echo && read -p $'\e[32m    Select an option\e[0m: ' option
-
 	if [[ $option == '1' ]]; then
 		echo -e "\n    \e[38;5;214mChecking for updates...!\e[0m"
 		sleep 1
@@ -55,7 +49,6 @@ while true; do
 			echo -e "\n    \e[38;5;196mFailed to update system.\e[0m"
 		fi
 		sleep 1
-
 	elif [[ $option -eq '2' ]]; then
 		echo -e "\n    \e[38;5;214mChecking needed upgrades...!\e[0m"
 		sleep 1
@@ -65,7 +58,6 @@ while true; do
 			echo -e "\n    \e[38;5;196mFailed to check needed upgrades.\e[0m"
 		fi
 		sleep 1
-
 	elif [[ $option == '3' ]]; then
 		echo -e "\n    \e[38;5;214mUpgrading system...!\e[0m"
 		sleep 1
@@ -75,10 +67,8 @@ while true; do
 			echo -e "\n    \e[38;5;196mFailed to upgrade system.\e[0m"
 		fi
 		sleep 1
-
 	elif [[ $option == '4' ]]; then
                 check_and_fix_broken_packages
-
 	elif [[ $option == '5' ]]; then
 		echo -e "\n    \e[38;5;214mRemoving unused packages...!\e[0m"
 		sleep 1
@@ -88,7 +78,6 @@ while true; do
 			echo -e "\n    \e[38;5;196mFailed to remove unused packages.\e[0m"
 		fi
 		sleep 1
-
 	elif [[ $option == '6' ]]; then
 		echo -e "\n    \e[38;5;214mCleaning package cache...!\e[0m"
 		sleep 1
@@ -98,19 +87,16 @@ while true; do
 			echo -e "\n    \e[38;5;196mFailed to clean package cache.\e[0m"
 		fi
 		sleep 1
-
 	elif [[ $option == '7' ]]; then
 		echo -e "\n    \e[38;5;214mclear...!\e[0m"
 		sleep 1
 		unset option
 		menu
-
 	elif [[ $option == '0' ]]; then
 		echo -e "\n\e[31m>>>>>>> Exit.\e[0m"
 		sleep 1
 		clear
 		exit
-
 	else
 		echo -e "\n\e[31m Wrong Option..!\e[0m"
 	fi
