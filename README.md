@@ -10,6 +10,7 @@ Effortlessly maintain your Linux system with this Bash script that streamlines r
 - `Update System` : Keep your repositories up to date.
 - `Check Needed Upgrades` : See available upgrades for installed packages.
 - `Upgrade System` : Perform system upgrades seamlessly.
+- `Check and Fix Broken Packages` : Detect and repair broken dependencies.
 - `Autoremove` : Remove unnecessary packages cluttering your system.
 - `Autoclean` : Free up space by cleaning the package cache.
 
