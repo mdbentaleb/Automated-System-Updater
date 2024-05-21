@@ -51,7 +51,7 @@ you can add it to a directory that is included in your system's PATH environment
 
 - create a symbolic link.
 ```bash
-	sudo ln -s ~/Automated-System-Updater/sysOpt.sh" /usr/local/bin/syso
+	sudo ln -s ~/Automated-System-Updater/sysOpt.sh /usr/local/bin/syso
 ```
 
 
