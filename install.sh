@@ -32,9 +32,7 @@ fi
 
 # Install necessary packages
 echo -e "${PINK}Checking for required packages...${RESET}"
-install_if_missing "figlet"
 install_if_missing "ncurses-utils"
-install_if_missing "sudo"
 
 # Check if the required packages were installed successfully
 if ! dpkg -s "figlet" >/dev/null 2>&1 || ! dpkg -s "ncurses-utils" >/dev/null 2>&1 || ! dpkg -s "sudo" >/dev/null 2>&1; then
