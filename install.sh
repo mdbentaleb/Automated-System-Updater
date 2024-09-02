@@ -1,6 +1,8 @@
 #!/bin/bash
 
-source "./config/config.sh"
+CONFIG_URL="https://raw.githubusercontent.com/mdbentaleb/Automated-System-Updater/main/config/config.sh"
+curl -fsSL "$CONFIG_URL" -o /tmp/config.sh
+source /tmp/config.sh
 
 cd "$HOME" || { echo -e "${RED}Failed to change directory to HOME${RESET}"; exit 1; }
 
