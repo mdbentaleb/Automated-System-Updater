@@ -15,7 +15,7 @@ readonly RESET='\033[0m'
 # Function to check if a package is installed
 function install_if_missing() {
 	if ! dpkg -s "$1" >/dev/null 2>&1; then
-		echo -e "${ORANGE}Installing$1...${RESET}"
+		echo -e "${ORANGE}Installing $1...${RESET}"
 		sudo apt-get install -y "$1"
 	else
 		echo -e "${GREY}$1 is already installed.${RESET}"
