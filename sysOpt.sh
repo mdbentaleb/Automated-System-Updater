@@ -17,11 +17,11 @@ function menu() {
 	figlet -t -f standard "$title" | sed "s/^/$(printf '%*s' $padding)/"
 	copyright=$(( (terminal_width - 28) / 2 ))
 	printf '%*s' $copyright
-	tpwrt "Programmed by mdbentaleb" 0.05
+	# tpwrt "Programmed by mdbentaleb" 0.05
 	echo -e "\n\n"
-	echo -e "\t\e[32m1\e[0m- Update System"
-	echo -e "\t\e[32m2\e[0m- Check needed Upgrades"
-	echo -e "\t\e[32m3\e[0m- Upgrade System"
+	echo -e "\t\e[32m1\e[0m) Update System"
+	echo -e "\t\e[32m2\e[0m) Check needed Upgrades"
+	echo -e "\t\e[32m3\e[0m) Upgrade System"
 	echo -e "\t\e[32m4\e[0m- Check and fix broken packages\e[0m"
 	echo -e "\t\e[32m5\e[0m- Autoremove"
 	echo -e "\t\e[32m6\e[0m- Autoclean"
