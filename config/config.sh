@@ -12,12 +12,3 @@ readonly BG_GREEN='\033[48;5;84m'
 readonly BG_RED='\033[48;5;197m'
 readonly RESET='\033[0m'
 
-# Function to check if a package is installed
-function install_if_missing() {
-	if ! dpkg -s "$1" >/dev/null 2>&1; then
-		echo -e "${ORANGE}Installing $1...${RESET}"
-		sudo apt-get install -y "$1"
-	else
-		echo -e "${GREY}$1 is already installed.${RESET}"
-	fi
-}
