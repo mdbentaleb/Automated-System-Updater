@@ -10,7 +10,7 @@ cd syso_temp || exit
 
 # Check if the directory was created successfully
 if [ ! -d "syso_temp" ]; then
-	echo -e "${RED}Error.${RESET}"
+	echo -e "${RED}Error creating a temporary folder.${RESET}"
 	exit 1
 fi
 
