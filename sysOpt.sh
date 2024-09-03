@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source "./config/config.sh"
+source "$HOME/Automated-System-Updater/config/config.sh"
 
 function tpwrt() {
 	local txt="$1"
