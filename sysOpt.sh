@@ -55,6 +55,7 @@ function check_and_fix_broken_packages() {
 	sleep 1
 }
 menu
+
 while true; do
 	echo && read -p $'\e[32m    Select an option\e[0m: ' option
 	if [[ $option == '1' ]]; then
