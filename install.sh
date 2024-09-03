@@ -46,8 +46,8 @@ function install_if_missing() {
 }
 install_if_missing "ncurses-bin"
 
-# Check if the ncurses-utils package was installed successfully
-if ! dpkg -s "ncurses-utils" >/dev/null 2>&1; then
+# Check if the package was installed successfully
+if ! dpkg -s "ncurses-bin" >/dev/null 2>&1; then
     echo -e "${RED}Error: Failed to install ncurses-utils.${RESET}"
     exit 1
 fi
