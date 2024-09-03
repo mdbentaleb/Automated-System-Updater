@@ -22,7 +22,7 @@ fi
 cd "$HOME/syso_temp" || exit
 
 # Clone the repository
-git clone https://github.com/mdbentaleb/Automated-System-Updater.git
+git clone https://github.com/mdbentaleb/Automated-System-Updater.git >/dev/null 2>&1
 
 # Check if the repository was cloned successfully
 if [ ! -d "Automated-System-Updater" ]; then
