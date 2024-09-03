@@ -4,7 +4,10 @@ CONFIG_URL="https://raw.githubusercontent.com/mdbentaleb/Automated-System-Update
 curl -fsSL "$CONFIG_URL" -o /tmp/config.sh
 source /tmp/config.sh
 
-cd "$HOME" || { echo -e "${RED}Failed to change directory to HOME${RESET}"; exit 1; }
+cd "$HOME" || {
+    echo -e "${RED}Failed to change directory to HOME${RESET}"
+    exit 1
+}
 
 # Create a temporary directory
 if [ -d "$HOME/syso_temp" ]; then
@@ -33,16 +36,17 @@ if [ ! -d "Automated-System-Updater" ]; then
 fi
 
 # Install necessary packages
-echo -e "${PINK}Checking for required packages...${RESET}"
+echo -e "\n${PINK}Checking for required packages...${RESET}"
 
 # Function to install packages if they are not already installed
 function install_if_missing() {
-	if ! dpkg -s "$1" >/dev/null 2>&1; then
-		echo -e "${ORANGE}Installing $1...${RESET}"
-		sudo apt-get install -y "$1"
-	else
-		echo -e "${GREY}$1 is already installed.${RESET}"
-	fi
+    if ! dpkg -s "$1" >/dev/null 2>&1; then
+        echo -e "│"
+        echo -e "└──── ${ORANGE}Installing $1...${RESET}"
+        sudo apt-get install -y "$1"
+    else
+        echo -e "└──── ${GREY}$1 is already installed.${RESET}"
+    fi
 }
 install_if_missing "ncurses-bin"
 
@@ -91,4 +95,6 @@ sudo ln -sf "$SOURCE_SCRIPT" "$INSTALL_DIR/$SCRIPT_NAME"
 # Make the symbolic link executable
 sudo chmod +x "$INSTALL_DIR/$SCRIPT_NAME"
 
-echo -e "${GREEN}Installation successful.\nYou can now run the script using the command: $SCRIPT_NAME${RESET}"
+echo -e "${GREEN}Installation successful.${RESET}"
+echo -e "└──── You can now run the script using the command: ${ORANGE}$SCRIPT_NAME${RESET}"
+echo
