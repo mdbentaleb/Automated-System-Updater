@@ -34,7 +34,8 @@ fi
 
 # Install necessary packages
 echo -e "${PINK}Checking for required packages...${RESET}"
-# Function to check if a package is installed
+
+# Function to install packages if they are not already installed
 function install_if_missing() {
 	if ! dpkg -s "$1" >/dev/null 2>&1; then
 		echo -e "${ORANGE}Installing $1...${RESET}"
@@ -43,7 +44,7 @@ function install_if_missing() {
 		echo -e "${GREY}$1 is already installed.${RESET}"
 	fi
 }
-install_if_missing "ncurses-utils"
+install_if_missing "ncurses-bin"
 
 # Check if the ncurses-utils package was installed successfully
 if ! dpkg -s "ncurses-utils" >/dev/null 2>&1; then
