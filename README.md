@@ -3,7 +3,7 @@
 ![script](https://github.com/mdbentaleb/Automated-System-Updater/assets/132714803/95d6a3dc-4a71-40b2-90fc-bc73585b634b)
 
 
-Effortlessly maintain your Linux system with this Bash script that streamlines routine tasks using the `apt` package manager.
+Effortlessly maintain your **Debian-based Linux system** *(e.g., Ubuntu, Debian)* with this Bash script that streamlines routine tasks using the `apt` package manager.
 
 ## Features
 
