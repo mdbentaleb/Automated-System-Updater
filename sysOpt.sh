@@ -58,6 +58,7 @@ menu
 
 while true; do
 	echo && read -p $'\033[38;5;45m     Select an option\e[0m:\033[38;5;84m ' option
+	echo -e "${RESET}"
 	if [[ $option == '1' ]]; then
 		echo -e "\n${ORANGE}┌─── Checking for updates...! ────────────────────────────────${RESET}"
 		sleep 1
