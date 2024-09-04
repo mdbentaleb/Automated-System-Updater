@@ -113,7 +113,7 @@ while true; do
 		menu
 	elif [[ $option == '0' ]]; then
 		echo -e "${RED}"
-		center_text "──── E X I T ────"
+		center_text "──────── E X I T ────────"
 		echo -e "\n\n"
 		sleep 2
 		clear
