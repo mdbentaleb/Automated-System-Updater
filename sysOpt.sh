@@ -36,87 +36,88 @@ function menu() {
 	center_text "$ttl6"
 
 	echo -e "\n\n"
-	echo -e "\t${GREEN}1${RESET} Update System"
-	echo -e "\t${GREEN}2${RESET} Check needed Upgrades"
-	echo -e "\t${GREEN}3${RESET} Upgrade System"
-	echo -e "\t${GREEN}4${RESET} Check and fix broken packages${RESET}"
-	echo -e "\t${GREEN}5${RESET} Autoremove"
-	echo -e "\t${GREEN}6${RESET} Autoclean"
-	echo -e "\t${ORANGE}7 Clear screen${RESET}"
-	echo -e "\t${RED}0 Exit${RESET}"
+	echo -e "\t${GREEN}1${RESET}) Update System"
+	echo -e "\t${GREEN}2${RESET}) Check needed Upgrades"
+	echo -e "\t${GREEN}3${RESET}) Upgrade System"
+	echo -e "\t${GREEN}4${RESET}) Check and fix broken packages${RESET}"
+	echo -e "\t${GREEN}5${RESET}) Autoremove"
+	echo -e "\t${GREEN}6${RESET}) Autoclean"
+	echo -e "\t${GREEN}7${RESET}) ${ORANGE}Clear screen${RESET}"
+	echo -e "\t${GREEN}0${RESET}) ${RED}Exit${RESET}"
 }
 function check_and_fix_broken_packages() {
-	echo -e "\n    ${ORANGE}Checking for broken packages...!${RESET}"
+	echo -e "\n${ORANGE}┌─── Checking for broken packages...! ────────────────────────${RESET}"
 	if sudo apt update && sudo apt --fix-broken install -y; then
-		echo -e "    ${ORANGE}Done fixing broken packages.${RESET}"
+		echo -e "${GREEN}└─── Done fixing broken packages.${RESET}"
 	else
-		echo -e "\n    ${RED}Failed to fix broken packages.${RESET}"
+		echo -e "\n${RED}──── Failed to fix broken packages.${RESET}"
 	fi
 	sleep 1
 }
 menu
 
 while true; do
-	echo && read -p $'\e[32m    Select an option\e[0m: ' option
+	echo && read -p $'\033[38;5;45m     Select an option\e[0m:\033[38;5;84m ' option
 	if [[ $option == '1' ]]; then
-		echo -e "\n    ${ORANGE}Checking for updates...!${RESET}"
+		echo -e "\n${ORANGE}┌─── Checking for updates...! ────────────────────────────────${RESET}"
 		sleep 1
 		if sudo apt update -y; then
-			echo -e "    ${ORANGE}Updating system successfully.${RESET}"
+			echo -e "${GREEN}└─── Updating system successfully. ${RESET}"
 		else
-			echo -e "\n    ${RED}Failed to update system.${RESET}"
+			echo -e "\n${RED}──── Failed to update system.${RESET}"
 		fi
 		sleep 1
 	elif [[ $option -eq '2' ]]; then
-		echo -e "\n    ${ORANGE}Checking needed upgrades...!${RESET}"
+		echo -e "\n${ORANGE}┌─── Checking needed upgrades...! ────────────────────────────${RESET}"
 		sleep 1
 		if sudo apt list --upgradable; then
-			echo -e "    ${ORANGE}Done checking needed upgrades.${RESET}"
+			echo -e "${GREEN}└─── Done checking needed upgrades. ${RESET}"
 		else
-			echo -e "\n    ${RED}Failed to check needed upgrades.${RESET}"
+			echo -e "\n${RED}──── Failed to check needed upgrades.${RESET}"
 		fi
 		sleep 1
 	elif [[ $option == '3' ]]; then
-		echo -e "\n    ${ORANGE}Upgrading system...!${RESET}"
+		echo -e "\n${ORANGE}┌─── Upgrading system...! ────────────────────────────────────${RESET}"
 		sleep 1
 		if sudo apt upgrade -y; then
-			echo -e "    ${ORANGE}System upgrade completed successfully.${RESET}"
+			echo -e "${GREEN}└─── System upgrade completed successfully.${RESET}"
 		else
-			echo -e "\n    ${RED}Failed to upgrade system.${RESET}"
+			echo -e "\n${RED}──── Failed to upgrade system.${RESET}"
 		fi
 		sleep 1
 	elif [[ $option == '4' ]]; then
 		check_and_fix_broken_packages
 	elif [[ $option == '5' ]]; then
-		echo -e "\n    ${ORANGE}Removing unused packages...!${RESET}"
+		echo -e "\n${ORANGE}┌─── Removing unused packages...! ────────────────────────────${RESET}"
 		sleep 1
 		if sudo apt autoremove -y; then
-			echo -e "    ${ORANGE}Unused packages removed successfully.${RESET}"
+			echo -e "${GREEN}└─── Unused packages removed successfully.${RESET}"
 		else
-			echo -e "\n    ${RED}Failed to remove unused packages.${RESET}"
+			echo -e "\n${RED}──── Failed to remove unused packages.${RESET}"
 		fi
 		sleep 1
 	elif [[ $option == '6' ]]; then
-		echo -e "\n    ${ORANGE}Cleaning package cache...!${RESET}"
+		echo -e "\n${ORANGE}┌─── Cleaning package cache...! ──────────────────────────────${RESET}"
 		sleep 1
 		if sudo apt autoclean; then
-			echo -e "    ${ORANGE}Package cache cleaned successfully.${RESET}"
+			echo -e "${GREEN}└─── Package cache cleaned successfully.${RESET}"
 		else
-			echo -e "\n    ${RED}Failed to clean package cache.${RESET}"
+			echo -e "\n${RED}──── Failed to clean package cache.${RESET}"
 		fi
 		sleep 1
 	elif [[ $option == '7' ]]; then
-		echo -e "\n    ${ORANGE}clear...!${RESET}"
+		echo -e "\n${ORANGE}──── clear...! ───────────────────────────────────────────────${RESET}"
 		sleep 1
 		unset option
 		menu
 	elif [[ $option == '0' ]]; then
-		echo "    │"
-		echo -e "    └── \e[31mExit.${RESET}"
-		sleep 1
+		echo -e "${RED}"
+		center_text "──── E X I T ────"
+		echo -e "\n\n"
+		sleep 2
 		clear
 		exit
 	else
-		echo -e "\n\e[31m Wrong Option..!${RESET}"
+		echo -e "\n${RED}──── Wrong Option..!${RESET}"
 	fi
 done
