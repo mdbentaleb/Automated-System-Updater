@@ -29,6 +29,18 @@ After installation, start using sysOpt by running:
 https://github.com/user-attachments/assets/b08215da-bb74-4649-af90-b90097e18dc1
 
 
+## Keeping the Tool Updated
+
+To ensure you have the latest features and improvements, regularly update your local repository by running the following command:
+
+```bash
+   cd "$HOME/Automated-System-Updater"
+```
+```bash
+git pull
+```
+
+
 ## Note for Users
 
 - The script uses `sudo` to execute certain commands. If prompted for a password, it is expected behavior, and there is no need to be concerned. This is a standard security measure to ensure proper system maintenance.
