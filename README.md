@@ -26,6 +26,7 @@ After installation, start using sysOpt by running:
 ```bash
    syso
 ```
+https://github.com/user-attachments/assets/b08215da-bb74-4649-af90-b90097e18dc1
 
 
 ## Note for Users
