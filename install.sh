@@ -9,14 +9,11 @@ cd "$HOME" || {
     exit 1
 }
 
-# Create a temporary directory
 if [ -d "$HOME/syso_temp" ]; then
     rm -rf "$HOME/syso_temp"
 fi
-
 mkdir "$HOME/syso_temp"
 
-# Check if the directory was created successfully
 if [ ! -d "$HOME/syso_temp" ]; then
     echo -e "${RED}Error creating a temporary folder.${RESET}"
     exit 1
@@ -27,7 +24,6 @@ cd "$HOME/syso_temp" || exit
 # Clone the repository
 git clone https://github.com/mdbentaleb/Automated-System-Updater.git >/dev/null 2>&1
 
-# Check if the repository was cloned successfully
 if [ ! -d "Automated-System-Updater" ]; then
     echo -e "${RED}Error: Failed to clone the repository.${RESET}"
     cd "$HOME" || exit
@@ -38,7 +34,6 @@ fi
 # Install necessary packages
 echo -e "\n${PINK}Checking for required packages...${RESET}"
 
-# Function to install packages if they are not already installed
 function install_if_missing() {
     if ! dpkg -s "$1" >/dev/null 2>&1; then
         echo -e "│"
@@ -48,23 +43,20 @@ function install_if_missing() {
         echo -e "└──── ${GREY}$1 is already installed.${RESET}"
     fi
 }
+sleep 4
 install_if_missing "ncurses-bin"
 
-# Check if the package was installed successfully
 if ! dpkg -s "ncurses-bin" >/dev/null 2>&1; then
     echo -e "${RED}Error: Failed to install ncurses-bin.${RESET}"
     exit 1
 fi
 
-# Check if the Automated-System-Updater directory exists
 if [ -d "$HOME/Automated-System-Updater" ]; then
     rm -rf "$HOME/Automated-System-Updater"
 fi
 
-# Copy Automated-System-Updater to $HOME directory
 cp -r Automated-System-Updater "$HOME"
 
-# Check if the directory was copied successfully
 if [ ! -d "$HOME/Automated-System-Updater" ]; then
     echo -e "${RED}Error: Failed to copy the directory.${RESET}"
     cd "$HOME" || exit
@@ -72,7 +64,6 @@ if [ ! -d "$HOME/Automated-System-Updater" ]; then
     exit 1
 fi
 
-# Remove the temporary directory
 cd "$HOME" || exit
 rm -rf "$HOME/syso_temp"
 
@@ -83,18 +74,16 @@ SCRIPT_NAME="syso"
 SCRIPT_DIR=$(dirname "$(realpath "$0")")
 SOURCE_SCRIPT="$SCRIPT_DIR/sysOpt.sh"
 
-# Check if the source script exists
 if [ ! -f "$SOURCE_SCRIPT" ]; then
     echo -e "${RED}Error: $SOURCE_SCRIPT not found. Make sure it is in the same directory as this install script.${RESET}"
     exit 1
 fi
 
-# Create a symbolic link to the script in the installation directory
 sudo ln -sf "$SOURCE_SCRIPT" "$INSTALL_DIR/$SCRIPT_NAME"
 
-# Make the symbolic link executable
 sudo chmod +x "$INSTALL_DIR/$SCRIPT_NAME"
 
 echo -e "${GREEN}Installation successful.${RESET}"
+sleep 1
 echo -e "└──── You can now run the script using the command: ${ORANGE}$SCRIPT_NAME${RESET}"
 echo
