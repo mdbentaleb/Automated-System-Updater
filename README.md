@@ -2,6 +2,7 @@
 
 ![sysopt](https://github.com/user-attachments/assets/cf2ce356-f3a6-476e-89f8-7b0e53a1d292)
 
+
 Effortlessly maintain your **Debian-based Linux system** *(e.g., Ubuntu, Debian)* with this Bash script that streamlines routine tasks using the `apt` package manager.
 
 ## Features
