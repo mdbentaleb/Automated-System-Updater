@@ -2,7 +2,6 @@
 
 ![sysopt](https://github.com/user-attachments/assets/cf2ce356-f3a6-476e-89f8-7b0e53a1d292)
 
-
 Effortlessly maintain your **Debian-based Linux system** *(e.g., Ubuntu, Debian)* with this Bash script that streamlines routine tasks using the `apt` package manager.
 
 ## Features
@@ -34,7 +33,7 @@ https://github.com/user-attachments/assets/b08215da-bb74-4649-af90-b90097e18dc1
 To ensure you have the latest features and improvements, regularly update your local repository by running the following command:
 
 ```bash
-   cd "$HOME/Automated-System-Updater"
+cd "$HOME/Automated-System-Updater"
 ```
 ```bash
 git pull
