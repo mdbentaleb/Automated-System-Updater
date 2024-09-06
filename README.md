@@ -1,7 +1,6 @@
 # sysOpt - Automated System Updater
 
-![sysopt](https://github.com/user-attachments/assets/29d65c50-9bc7-4f65-81cf-05b752e8f21a)
-
+![sysopt](https://github.com/user-attachments/assets/cf2ce356-f3a6-476e-89f8-7b0e53a1d292)
 
 Effortlessly maintain your **Debian-based Linux system** *(e.g., Ubuntu, Debian)* with this Bash script that streamlines routine tasks using the `apt` package manager.
 
